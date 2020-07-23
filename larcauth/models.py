@@ -189,70 +189,58 @@ class c_config (models.Model):
         ** language (level 1)
 21 - program depends on
         ** language (level 1)
-
-
 22 - term depends on
         ** language (level 1)
         ** academicyear (level 1)
-
 31 - AECuser depends on
         * gender (level 2)
-
 33 - subjectgroup depends on
         ** academicyear (level 1)
         ** program (level 2)
         * coordonator
-
 32 - level depends on
         ** programs (level 2)
         ** (eventually) academicyear (level 1)
-
 42 - levelsubject depends on
         ** level (level 3)
         ** subjectgroup
 
+
 42 - classroom depends on
         ** level (level 3)
         * teachadm (level 2) (Opt)
-
 41 - parentutor depends on
         *** data herited from AECUser
         * parentutornature
-
 41 - student depends on
         *** data herited from AECUser
         ** mtm parentutor
-
 41 - parentutor depends on
         *** data herited from AECUser
         * parentutornature
-
 40 - teachadm
         *** data herited from AECUser
-
 54 - classroom_termsubject depends on
         ** classroom
         ** sunbjectgroup
         ** teacher
         ** term
-
 42 - learner depends on
         ** academic year - level 1
         ** student - level 3
-
 52 - externalessay depends on
         ** levelsubject (level 4)
         ** teachadm 4
+        
 
 52 - learner_has_term depends on
         ** fk_learner
         ** fk_term
-
 62 - learnerdp_has_termtdc
         ** fk_learnerdp
         ** fk_term
 
-63 - learnerdp_has_termexternalessay
+63 - learnerdp_has_termothersubject
         ** fk_learnerdp
         ** fk_term
         ** fk_termexternalessay
@@ -262,10 +250,10 @@ class c_config (models.Model):
         ** fk_term
         ** fk_termsubject
 
-71 - learner_has_termsubkectDP
+71 - learner_has_termsubjectDP
        inherited from learner_has_termsubject
 
-71 - learner_has_termsubkectPEI
+71 - learner_has_termsubjectPEI
        inherited from learner_has_termsubject
 
     1- table_language_ok
@@ -1036,34 +1024,38 @@ class learner_has_termsubject(models.Model):
 # See the function of univers creation, day 6 : creation_day_6
 # This table is populate with defaut values for a whole year depending of the configuration file.
 class learnerDP_has_termsubjectDP(learner_has_termsubject):
-    f01_observation = models.CharField(null=True,max_length=255)
-    f02_observation = models.CharField(null=True,max_length=255)
-    f03_observation = models.CharField(null=True,max_length=144)
-    f04_observation = models.CharField(null=True,max_length=255)
-    f05_observation = models.CharField(null=True,max_length=255)
-    f06_observation = models.CharField(null=True,max_length=255)
-    f07_observation = models.CharField(null=True,max_length=255)
-    f08_observation = models.CharField(null=True,max_length=255)
-    f09_observation = models.CharField(null=True,max_length=255)
-    f10_observation = models.CharField(null=True,max_length=255)
-    f11_observation = models.CharField(null=True,max_length=255)
-    f12_observation = models.CharField(null=True,max_length=255)
-    s01_observation = models.CharField(null=True,max_length=255)
-    s02_observation = models.CharField(null=True,max_length=255)
-    s03_observation = models.CharField(null=True,max_length=255)
-    s04_observation = models.CharField(null=True,max_length=255)
-    s05_observation = models.CharField(null=True,max_length=255)
-    s06_observation = models.CharField(null=True,max_length=255)
-    s07_observation = models.CharField(null=True,max_length=255)
-    s08_observation = models.CharField(null=True,max_length=255)
-    s09_observation = models.CharField(null=True,max_length=255)
-    s10_observation = models.CharField(null=True,max_length=255)
-    s11_observation = models.CharField(null=True,max_length=255)
-    s12_observation = models.CharField(null=True,max_length=255)
-    cp_observation = models.CharField(null=True,max_length=255)
+
+    f01_observation = models.CharField(null=True,max_length=360)
+    f02_observation = models.CharField(null=True,max_length=360)
+    f03_observation = models.CharField(null=True,max_length=360)
+    f04_observation = models.CharField(null=True,max_length=360)
+    f05_observation = models.CharField(null=True,max_length=360)
+    f06_observation = models.CharField(null=True,max_length=360)
+    f07_observation = models.CharField(null=True,max_length=360)
+    f08_observation = models.CharField(null=True,max_length=360)
+    f09_observation = models.CharField(null=True,max_length=360)
+    f10_observation = models.CharField(null=True,max_length=360)
+    f11_observation = models.CharField(null=True,max_length=360)
+    f12_observation = models.CharField(null=True,max_length=360)
+    f13_obsersation = models.CharField(null=True, max_length=360)
+    f14_obsersation = models.CharField(null=True, max_length=360)
+    f15_obsersation = models.CharField(null=True, max_length=360)
+
+    s01_observation = models.CharField(null=True,max_length=360)
+    s02_observation = models.CharField(null=True,max_length=360)
+    s03_observation = models.CharField(null=True,max_length=360)
+    s04_observation = models.CharField(null=True,max_length=360)
+    s05_observation = models.CharField(null=True,max_length=360)
+    s06_observation = models.CharField(null=True,max_length=360)
+    s07_observation = models.CharField(null=True,max_length=360)
+    s08_observation = models.CharField(null=True,max_length=360)
+    s09_observation = models.CharField(null=True,max_length=360)
+    s10_observation = models.CharField(null=True,max_length=360)
+    s11_observation = models.CharField(null=True,max_length=360)
+    s12_observation = models.CharField(null=True,max_length=360)
+
 
     f01_note = models.FloatField(null=True)
-    b01 = models.SmallIntegerField(null=True)
     f01_note_a = models.SmallIntegerField(null=True)
     f01_note_b = models.SmallIntegerField(null=True)
     f01_note_c = models.SmallIntegerField(null=True)
@@ -1072,7 +1064,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f01_note_f = models.SmallIntegerField(null=True)
 
     f02_note = models.FloatField(null=True)
-    b02 = models.SmallIntegerField(null=True)
     f02_note_a = models.SmallIntegerField(null=True)
     f02_note_b = models.SmallIntegerField(null=True)
     f02_note_c = models.SmallIntegerField(null=True)
@@ -1081,7 +1072,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f02_note_f = models.SmallIntegerField(null=True)
 
     f03_note = models.FloatField(null=True)
-    b03 = models.SmallIntegerField(null=True)
     f03_note_a = models.SmallIntegerField(null=True)
     f03_note_b = models.SmallIntegerField(null=True)
     f03_note_c = models.SmallIntegerField(null=True)
@@ -1090,7 +1080,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f03_note_f = models.SmallIntegerField(null=True)
 
     f04_note = models.FloatField(null=True)
-    b04 = models.SmallIntegerField(null=True)
     f04_note_a = models.SmallIntegerField(null=True)
     f04_note_b = models.SmallIntegerField(null=True)
     f04_note_c = models.SmallIntegerField(null=True)
@@ -1099,7 +1088,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f04_note_f = models.SmallIntegerField(null=True)
 
     f05_note = models.FloatField(null=True)
-    b05 = models.SmallIntegerField(null=True)
     f05_note_a = models.SmallIntegerField(null=True)
     f05_note_b = models.SmallIntegerField(null=True)
     f05_note_c = models.SmallIntegerField(null=True)
@@ -1108,7 +1096,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f05_note_f = models.SmallIntegerField(null=True)
 
     f06_note = models.FloatField(null=True)
-    b06 = models.SmallIntegerField(null=True)
     f06_note_a = models.SmallIntegerField(null=True)
     f06_note_b = models.SmallIntegerField(null=True)
     f06_note_c = models.SmallIntegerField(null=True)
@@ -1117,7 +1104,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f06_note_f = models.SmallIntegerField(null=True)
 
     f07_note = models.FloatField(null=True)
-    b07 = models.SmallIntegerField(null=True)
     f07_note_a = models.SmallIntegerField(null=True)
     f07_note_b = models.SmallIntegerField(null=True)
     f07_note_c = models.SmallIntegerField(null=True)
@@ -1126,7 +1112,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f07_note_f = models.SmallIntegerField(null=True)
 
     f08_note = models.FloatField(null=True)
-    b08 = models.SmallIntegerField(null=True)
     f08_note_a = models.SmallIntegerField(null=True)
     f08_note_b = models.SmallIntegerField(null=True)
     f08_note_c = models.SmallIntegerField(null=True)
@@ -1135,7 +1120,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f08_note_f = models.SmallIntegerField(null=True)
 
     f09_note = models.FloatField(null=True)
-    b09 = models.SmallIntegerField(null=True)
     f09_note_a = models.SmallIntegerField(null=True)
     f09_note_b = models.SmallIntegerField(null=True)
     f09_note_c = models.SmallIntegerField(null=True)
@@ -1144,7 +1128,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f09_note_f = models.SmallIntegerField(null=True)
 
     f10_note = models.FloatField(null=True)
-    b10 = models.SmallIntegerField(null=True)
     f10_note_a = models.SmallIntegerField(null=True)
     f10_note_b = models.SmallIntegerField(null=True)
     f10_note_c = models.SmallIntegerField(null=True)
@@ -1153,7 +1136,6 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f10_note_f = models.SmallIntegerField(null=True)
 
     f11_note = models.FloatField(null=True)
-    b11 = models.SmallIntegerField(null=True)
     f11_note_a = models.SmallIntegerField(null=True)
     f11_note_b = models.SmallIntegerField(null=True)
     f11_note_c = models.SmallIntegerField(null=True)
@@ -1162,13 +1144,13 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     f11_note_f = models.SmallIntegerField(null=True)
 
     f12_note = models.FloatField(null=True)
-    b12 = models.SmallIntegerField(null=True)
     f12_note_a = models.SmallIntegerField(null=True)
     f12_note_b = models.SmallIntegerField(null=True)
     f12_note_c = models.SmallIntegerField(null=True)
     f12_note_d = models.SmallIntegerField(null=True)
     f12_note_e = models.SmallIntegerField(null=True)
     f12_note_f = models.SmallIntegerField(null=True)
+
     s01_note = models.FloatField(null=True)
     s01_note_a = models.SmallIntegerField(null=True)
     s01_note_b = models.SmallIntegerField(null=True)
@@ -1176,6 +1158,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s01_note_d = models.SmallIntegerField(null=True)
     s01_note_e = models.SmallIntegerField(null=True)
     s01_note_f = models.SmallIntegerField(null=True)
+
     s02_note = models.FloatField(null=True)
     s02_note_a = models.SmallIntegerField(null=True)
     s02_note_b = models.SmallIntegerField(null=True)
@@ -1183,6 +1166,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s02_note_d = models.SmallIntegerField(null=True)
     s02_note_e = models.SmallIntegerField(null=True)
     s02_note_f = models.SmallIntegerField(null=True)
+
     s03_note = models.FloatField(null=True)
     s03_note_a = models.SmallIntegerField(null=True)
     s03_note_b = models.SmallIntegerField(null=True)
@@ -1190,6 +1174,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s03_note_d = models.SmallIntegerField(null=True)
     s03_note_e = models.SmallIntegerField(null=True)
     s03_note_f = models.SmallIntegerField(null=True)
+
     s04_note = models.FloatField(null=True)
     s04_note_a = models.SmallIntegerField(null=True)
     s04_note_b = models.SmallIntegerField(null=True)
@@ -1197,6 +1182,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s04_note_d = models.SmallIntegerField(null=True)
     s04_note_e = models.SmallIntegerField(null=True)
     s04_note_f = models.SmallIntegerField(null=True)
+
     s05_note = models.FloatField(null=True)
     s05_note_a = models.SmallIntegerField(null=True)
     s05_note_b = models.SmallIntegerField(null=True)
@@ -1204,6 +1190,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s05_note_d = models.SmallIntegerField(null=True)
     s05_note_e = models.SmallIntegerField(null=True)
     s05_note_f = models.SmallIntegerField(null=True)
+
     s06_note = models.FloatField(null=True)
     s06_note_a = models.SmallIntegerField(null=True)
     s06_note_b = models.SmallIntegerField(null=True)
@@ -1211,6 +1198,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s06_note_d = models.SmallIntegerField(null=True)
     s06_note_e = models.SmallIntegerField(null=True)
     s06_note_f = models.SmallIntegerField(null=True)
+
     s07_note = models.FloatField(null=True)
     s07_note_a = models.SmallIntegerField(null=True)
     s07_note_b = models.SmallIntegerField(null=True)
@@ -1218,6 +1206,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s07_note_d = models.SmallIntegerField(null=True)
     s07_note_e = models.SmallIntegerField(null=True)
     s07_note_f = models.SmallIntegerField(null=True)
+
     s08_note = models.FloatField(null=True)
     s08_note_a = models.SmallIntegerField(null=True)
     s08_note_b = models.SmallIntegerField(null=True)
@@ -1225,6 +1214,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s08_note_d = models.SmallIntegerField(null=True)
     s08_note_e = models.SmallIntegerField(null=True)
     s08_note_f = models.SmallIntegerField(null=True)
+
     s09_note = models.FloatField(null=True)
     s09_note_a = models.SmallIntegerField(null=True)
     s09_note_b = models.SmallIntegerField(null=True)
@@ -1232,6 +1222,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s09_note_d = models.SmallIntegerField(null=True)
     s09_note_e = models.SmallIntegerField(null=True)
     s09_note_f = models.SmallIntegerField(null=True)
+
     s10_note = models.FloatField(null=True)
     s10_note_a = models.SmallIntegerField(null=True)
     s10_note_b = models.SmallIntegerField(null=True)
@@ -1239,6 +1230,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s10_note_d = models.SmallIntegerField(null=True)
     s10_note_e = models.SmallIntegerField(null=True)
     s10_note_f = models.SmallIntegerField(null=True)
+
     s11_note = models.FloatField(null=True)
     s11_note_a = models.SmallIntegerField(null=True)
     s11_note_b = models.SmallIntegerField(null=True)
@@ -1246,6 +1238,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s11_note_d = models.SmallIntegerField(null=True)
     s11_note_e = models.SmallIntegerField(null=True)
     s11_note_f = models.SmallIntegerField(null=True)
+
     s12_note = models.FloatField(null=True)
     s12_note_a = models.SmallIntegerField(null=True)
     s12_note_b = models.SmallIntegerField(null=True)
@@ -1254,6 +1247,36 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s12_note_e = models.SmallIntegerField(null=True)
     s12_note_f = models.SmallIntegerField(null=True)
 
+    # Internal Assessment (Evaluation interne)
+    s13_note = models.FloatField(null=True)
+    s13_note_a = models.SmallIntegerField(null=True)
+    s13_note_b = models.SmallIntegerField(null=True)
+    s13_note_c = models.SmallIntegerField(null=True)
+    s13_note_d = models.SmallIntegerField(null=True)
+    s13_note_e = models.SmallIntegerField(null=True)
+    s13_note_f = models.SmallIntegerField(null=True)
+    s13_obsersation = models.CharField(null=True, max_length=720)
+
+    # Composition
+    s14_note = models.FloatField(null=True)
+    s14_note_a = models.SmallIntegerField(null=True)
+    s14_note_b = models.SmallIntegerField(null=True)
+    s14_note_c = models.SmallIntegerField(null=True)
+    s14_note_d = models.SmallIntegerField(null=True)
+    s14_note_e = models.SmallIntegerField(null=True)
+    s14_note_f = models.SmallIntegerField(null=True)
+    s14_obsersation = models.CharField(null=True, max_length=360)
+
+    # Professional judgement
+    s15_note = models.FloatField(null=True)
+    s15_note_a = models.SmallIntegerField(null=True)
+    s15_note_b = models.SmallIntegerField(null=True)
+    s15_note_c = models.SmallIntegerField(null=True)
+    s15_note_d = models.SmallIntegerField(null=True)
+    s15_note_e = models.SmallIntegerField(null=True)
+    s15_note_f = models.SmallIntegerField(null=True)
+    s15_obsersation = models.CharField(null=True, max_length=1200)
+
     cp_note = models.FloatField(null=True)
     cp_note_a = models.SmallIntegerField(null=True)
     cp_note_b = models.SmallIntegerField(null=True)
@@ -1261,7 +1284,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     cp_note_d = models.SmallIntegerField(null=True)
     cp_note_e = models.SmallIntegerField(null=True)
     cp_note_f = models.SmallIntegerField(null=True)
-
+    cp_obsersation = models.CharField(null=True, max_length=360)
 
     jgt_a = models.SmallIntegerField(null=True)
     jgt_b = models.SmallIntegerField(null=True)
@@ -1269,6 +1292,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     jgt_d = models.SmallIntegerField(null=True)
     jgt_e = models.SmallIntegerField(null=True)
     jgt_f = models.SmallIntegerField(null=True)
+    jgt_obsersation = models.CharField(null=True,max_length=1200)
 
     ei_note = models.FloatField(null=True)
     ei_observation = models.CharField(null=True,max_length=1500)
@@ -1284,7 +1308,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     moy_on_7 = models.FloatField(null=True)
     # Note du Bac Blanc par rapport critere
     bacblanc_v = models.FloatField(null=True)
-     # Note du Bac Blanc
+    # Note du Bac Blanc
     bacblanc = models.SmallIntegerField(null=True)
     # Observations
     term_observation = models.TextField(null=True)
@@ -1305,168 +1329,198 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
 # This table is populate with defaut values for a whole year depending of the configuration file.
 class learnerPei_has_termsubjectPEI(learner_has_termsubject):
 
-    f01_observation = models.CharField(null=True,max_length=255)
-    f02_observation = models.CharField(null=True,max_length=255)
-    f03_observation = models.CharField(null=True,max_length=255)
-    f04_observation = models.CharField(null=True,max_length=255)
-    f05_observation = models.CharField(null=True,max_length=255)
-    f06_observation = models.CharField(null=True,max_length=255)
-    f07_observation = models.CharField(null=True,max_length=255)
-    f08_observation = models.CharField(null=True,max_length=255)
-    f09_observation = models.CharField(null=True,max_length=255)
-    f10_observation = models.CharField(null=True,max_length=255)
-    f11_observation = models.CharField(null=True,max_length=255)
-    f12_observation = models.CharField(null=True,max_length=255)
-    s01_observation = models.CharField(null=True,max_length=255)
-    s02_observation = models.CharField(null=True,max_length=255)
-    s03_observation = models.CharField(null=True,max_length=255)
-    s04_observation = models.CharField(null=True,max_length=255)
-    s05_observation = models.CharField(null=True,max_length=255)
-    s06_observation = models.CharField(null=True,max_length=255)
-    s07_observation = models.CharField(null=True,max_length=255)
-    s08_observation = models.CharField(null=True,max_length=255)
-    s09_observation = models.CharField(null=True,max_length=255)
-    s10_observation = models.CharField(null=True,max_length=255)
-    s11_observation = models.CharField(null=True,max_length=255)
-    s12_observation = models.CharField(null=True,max_length=255)
+    f01_observation = models.CharField(null=True,max_length=360)
+    f02_observation = models.CharField(null=True,max_length=360)
+    f03_observation = models.CharField(null=True,max_length=360)
+    f04_observation = models.CharField(null=True,max_length=360)
+    f05_observation = models.CharField(null=True,max_length=360)
+    f06_observation = models.CharField(null=True,max_length=360)
+    f07_observation = models.CharField(null=True,max_length=360)
+    f08_observation = models.CharField(null=True,max_length=360)
+    f09_observation = models.CharField(null=True,max_length=360)
+    f10_observation = models.CharField(null=True,max_length=360)
+    f11_observation = models.CharField(null=True,max_length=360)
+    f12_observation = models.CharField(null=True,max_length=360)
+    f13_obsersation = models.CharField(null=True, max_length=360)
+    f14_obsersation = models.CharField(null=True, max_length=360)
+    f15_obsersation = models.CharField(null=True, max_length=360)
+
+    s01_observation = models.CharField(null=True,max_length=360)
+    s02_observation = models.CharField(null=True,max_length=360)
+    s03_observation = models.CharField(null=True,max_length=360)
+    s04_observation = models.CharField(null=True,max_length=360)
+    s05_observation = models.CharField(null=True,max_length=360)
+    s06_observation = models.CharField(null=True,max_length=360)
+    s07_observation = models.CharField(null=True,max_length=360)
+    s08_observation = models.CharField(null=True,max_length=360)
+    s09_observation = models.CharField(null=True,max_length=360)
+    s10_observation = models.CharField(null=True,max_length=360)
+    s11_observation = models.CharField(null=True,max_length=360)
+    s12_observation = models.CharField(null=True,max_length=360)
+    s13_obsersation = models.CharField(null=True, max_length=360)
+
     f01_note_a = models.SmallIntegerField(null=True)
     f01_note_b = models.SmallIntegerField(null=True)
     f01_note_c = models.SmallIntegerField(null=True)
     f01_note_d = models.SmallIntegerField(null=True)
     f01_note_e = models.SmallIntegerField(null=True)
     f01_note_f = models.SmallIntegerField(null=True)
+
     f02_note_a = models.SmallIntegerField(null=True)
     f02_note_b = models.SmallIntegerField(null=True)
     f02_note_c = models.SmallIntegerField(null=True)
     f02_note_d = models.SmallIntegerField(null=True)
     f02_note_e = models.SmallIntegerField(null=True)
     f02_note_f = models.SmallIntegerField(null=True)
+
     f03_note_a = models.SmallIntegerField(null=True)
     f03_note_b = models.SmallIntegerField(null=True)
     f03_note_c = models.SmallIntegerField(null=True)
     f03_note_d = models.SmallIntegerField(null=True)
     f03_note_e = models.SmallIntegerField(null=True)
     f03_note_f = models.SmallIntegerField(null=True)
+
     f04_note_a = models.SmallIntegerField(null=True)
     f04_note_b = models.SmallIntegerField(null=True)
     f04_note_c = models.SmallIntegerField(null=True)
     f04_note_d = models.SmallIntegerField(null=True)
     f04_note_e = models.SmallIntegerField(null=True)
     f04_note_f = models.SmallIntegerField(null=True)
+
     f05_note_a = models.SmallIntegerField(null=True)
     f05_note_b = models.SmallIntegerField(null=True)
     f05_note_c = models.SmallIntegerField(null=True)
     f05_note_d = models.SmallIntegerField(null=True)
     f05_note_e = models.SmallIntegerField(null=True)
     f05_note_f = models.SmallIntegerField(null=True)
+
     f06_note_a = models.SmallIntegerField(null=True)
     f06_note_b = models.SmallIntegerField(null=True)
     f06_note_c = models.SmallIntegerField(null=True)
     f06_note_d = models.SmallIntegerField(null=True)
     f06_note_e = models.SmallIntegerField(null=True)
     f06_note_f = models.SmallIntegerField(null=True)
+
     f07_note_a = models.SmallIntegerField(null=True)
     f07_note_b = models.SmallIntegerField(null=True)
     f07_note_c = models.SmallIntegerField(null=True)
     f07_note_d = models.SmallIntegerField(null=True)
     f07_note_e = models.SmallIntegerField(null=True)
     f07_note_f = models.SmallIntegerField(null=True)
+
     f08_note_a = models.SmallIntegerField(null=True)
     f08_note_b = models.SmallIntegerField(null=True)
     f08_note_c = models.SmallIntegerField(null=True)
     f08_note_d = models.SmallIntegerField(null=True)
     f08_note_e = models.SmallIntegerField(null=True)
     f08_note_f = models.SmallIntegerField(null=True)
+
     f09_note_a = models.SmallIntegerField(null=True)
     f09_note_b = models.SmallIntegerField(null=True)
     f09_note_c = models.SmallIntegerField(null=True)
     f09_note_d = models.SmallIntegerField(null=True)
     f09_note_e = models.SmallIntegerField(null=True)
     f09_note_f = models.SmallIntegerField(null=True)
+
     f10_note_a = models.SmallIntegerField(null=True)
     f10_note_b = models.SmallIntegerField(null=True)
     f10_note_c = models.SmallIntegerField(null=True)
     f10_note_d = models.SmallIntegerField(null=True)
     f10_note_e = models.SmallIntegerField(null=True)
     f10_note_f = models.SmallIntegerField(null=True)
+
     f11_note_a = models.SmallIntegerField(null=True)
     f11_note_b = models.SmallIntegerField(null=True)
     f11_note_c = models.SmallIntegerField(null=True)
     f11_note_d = models.SmallIntegerField(null=True)
     f11_note_e = models.SmallIntegerField(null=True)
     f11_note_f = models.SmallIntegerField(null=True)
+
     f12_note_a = models.SmallIntegerField(null=True)
     f12_note_b = models.SmallIntegerField(null=True)
     f12_note_c = models.SmallIntegerField(null=True)
     f12_note_d = models.SmallIntegerField(null=True)
     f12_note_e = models.SmallIntegerField(null=True)
     f12_note_f = models.SmallIntegerField(null=True)
+
+    # Notes sommatives 
     s01_note_a = models.SmallIntegerField(null=True)
     s01_note_b = models.SmallIntegerField(null=True)
     s01_note_c = models.SmallIntegerField(null=True)
     s01_note_d = models.SmallIntegerField(null=True)
     s01_note_e = models.SmallIntegerField(null=True)
     s01_note_f = models.SmallIntegerField(null=True)
+
     s02_note_a = models.SmallIntegerField(null=True)
     s02_note_b = models.SmallIntegerField(null=True)
     s02_note_c = models.SmallIntegerField(null=True)
     s02_note_d = models.SmallIntegerField(null=True)
     s02_note_e = models.SmallIntegerField(null=True)
     s02_note_f = models.SmallIntegerField(null=True)
+
     s03_note_a = models.SmallIntegerField(null=True)
     s03_note_b = models.SmallIntegerField(null=True)
     s03_note_c = models.SmallIntegerField(null=True)
     s03_note_d = models.SmallIntegerField(null=True)
     s03_note_e = models.SmallIntegerField(null=True)
     s03_note_f = models.SmallIntegerField(null=True)
+
     s04_note_a = models.SmallIntegerField(null=True)
     s04_note_b = models.SmallIntegerField(null=True)
     s04_note_c = models.SmallIntegerField(null=True)
     s04_note_d = models.SmallIntegerField(null=True)
     s04_note_e = models.SmallIntegerField(null=True)
     s04_note_f = models.SmallIntegerField(null=True)
+
     s05_note_a = models.SmallIntegerField(null=True)
     s05_note_b = models.SmallIntegerField(null=True)
     s05_note_c = models.SmallIntegerField(null=True)
     s05_note_d = models.SmallIntegerField(null=True)
     s05_note_e = models.SmallIntegerField(null=True)
     s05_note_f = models.SmallIntegerField(null=True)
+
     s06_note_a = models.SmallIntegerField(null=True)
     s06_note_b = models.SmallIntegerField(null=True)
     s06_note_c = models.SmallIntegerField(null=True)
     s06_note_d = models.SmallIntegerField(null=True)
     s06_note_e = models.SmallIntegerField(null=True)
     s06_note_f = models.SmallIntegerField(null=True)
+
     s07_note_a = models.SmallIntegerField(null=True)
     s07_note_b = models.SmallIntegerField(null=True)
     s07_note_c = models.SmallIntegerField(null=True)
     s07_note_d = models.SmallIntegerField(null=True)
     s07_note_e = models.SmallIntegerField(null=True)
     s07_note_f = models.SmallIntegerField(null=True)
+
     s08_note_a = models.SmallIntegerField(null=True)
     s08_note_b = models.SmallIntegerField(null=True)
     s08_note_c = models.SmallIntegerField(null=True)
     s08_note_d = models.SmallIntegerField(null=True)
     s08_note_e = models.SmallIntegerField(null=True)
     s08_note_f = models.SmallIntegerField(null=True)
+
     s09_note_a = models.SmallIntegerField(null=True)
     s09_note_b = models.SmallIntegerField(null=True)
     s09_note_c = models.SmallIntegerField(null=True)
     s09_note_d = models.SmallIntegerField(null=True)
     s09_note_e = models.SmallIntegerField(null=True)
     S09_note_f = models.SmallIntegerField(null=True)
+
     s10_note_a = models.SmallIntegerField(null=True)
     s10_note_b = models.SmallIntegerField(null=True)
     s10_note_c = models.SmallIntegerField(null=True)
     s10_note_d = models.SmallIntegerField(null=True)
     s10_note_e = models.SmallIntegerField(null=True)
     s10_note_f = models.SmallIntegerField(null=True)
+
     s11_note_a = models.SmallIntegerField(null=True)
     s11_note_b = models.SmallIntegerField(null=True)
     s11_note_c = models.SmallIntegerField(null=True)
     s11_note_d = models.SmallIntegerField(null=True)
     s11_note_e = models.SmallIntegerField(null=True)
     s11_note_f = models.SmallIntegerField(null=True)
+
     s12_note_a = models.SmallIntegerField(null=True)
     s12_note_b = models.SmallIntegerField(null=True)
     s12_note_c = models.SmallIntegerField(null=True)
@@ -1475,13 +1529,37 @@ class learnerPei_has_termsubjectPEI(learner_has_termsubject):
     s12_note_f = models.SmallIntegerField(null=True)
     s12_note_g = models.SmallIntegerField(null=True)
 
+    s13_note_a = models.SmallIntegerField(null=True)
+    s13_note_b = models.SmallIntegerField(null=True)
+    s13_note_c = models.SmallIntegerField(null=True)
+    s13_note_d = models.SmallIntegerField(null=True)
+    s13_note_e = models.SmallIntegerField(null=True)
+    s13_note_f = models.SmallIntegerField(null=True)
+
+    # Composition
+    s14_note_a = models.SmallIntegerField(null=True)
+    s14_note_b = models.SmallIntegerField(null=True)
+    s14_note_c = models.SmallIntegerField(null=True)
+    s14_note_d = models.SmallIntegerField(null=True)
+    s14_note_e = models.SmallIntegerField(null=True)
+    s14_note_f = models.SmallIntegerField(null=True)
+    s14_obsersation = models.CharField(null=True, max_length=360)
+
+    # Professional judgement
+    s15_note_a = models.SmallIntegerField(null=True)
+    s15_note_b = models.SmallIntegerField(null=True)
+    s15_note_c = models.SmallIntegerField(null=True)
+    s15_note_d = models.SmallIntegerField(null=True)
+    s15_note_e = models.SmallIntegerField(null=True)
+    s15_note_f = models.SmallIntegerField(null=True)
+    s15_obsersation = models.CharField(null=True, max_length=1200)
+
     cp_note_a = models.SmallIntegerField(null=True)
     cp_note_b = models.SmallIntegerField(null=True)
     cp_note_c = models.SmallIntegerField(null=True)
     cp_note_d = models.SmallIntegerField(null=True)
     cp_note_e = models.SmallIntegerField(null=True)
     cp_note_f = models.SmallIntegerField(null=True)
-
     cp_observation = models.CharField(null=True,max_length=72)
 
     jgt_a = models.SmallIntegerField(null=True)
@@ -1549,7 +1627,7 @@ class criteria_of_levelsubject (models.Model):
 
 
     def __str__(self):
-        return self.criteria_letter
+        return self.criteria_letter + ' ' + self.criteria_label
 
 # subject_has_calendar
 # For all the subjects - 3 évènement possible dans chaque journée
@@ -1571,7 +1649,8 @@ class subject_has_calendar(models.Model):
     fk_classroom_termsubject = models.ForeignKey('classroom_termsubject',on_delete = models.PROTECT)
 
     def __str__(self):
-        return self.nature_1
+        return self.fk_classroom_termsubject + '_' + self.fk_jour
+
     """
     # Population
     # The table is populate with a script with default value
@@ -1582,8 +1661,10 @@ class evaluation(models.Model):
     label = models.CharField(max_length=3, null=False, blank=False)
     nature = models.CharField(max_length=72, null=True, blank=True)
     baremeNoteDP = models.SmallIntegerField(default=20);
+    baremeNoteCritere = models.SmallIntegerField(default=8);
     type_evaluation = models.CharField(default='-',max_length=1, null=False, blank=False)
     index_eval = models.SmallIntegerField(default=0)
+
     crit_A = models.NullBooleanField()
     aspect_A1 = models.NullBooleanField()
     aspect_A2 = models.NullBooleanField()
@@ -1632,6 +1713,37 @@ class evaluation(models.Model):
     aspect_f5 = models.NullBooleanField()
     aspect_f6 = models.NullBooleanField()
     aspect_f7 = models.NullBooleanField()
+
+    # Statistics done with checks before updating the databas in the cloud.
+    # nb_Students is the number of student in classroom who has pass it
+    # this attribute is completed by a check
+    nb_stud = models.SmallIntegerField(null=True)
+    nb_stud_a = models.SmallIntegerField(null=True)
+    nb_stud_b = models.SmallIntegerField(null=True)
+    nb_stud_c = models.SmallIntegerField(null=True)
+    nb_stud_d = models.SmallIntegerField(null=True)
+    nb_stud_e = models.SmallIntegerField(null=True)
+    nb_stud_f = models.SmallIntegerField(null=True)
+    # Active is an attribut that confirm that the evaluation is used
+    # Normally, it is used if Crit_A,B,C,D,E or F is True
+    # this attribute is completed by a check
+    active = models.BooleanField (default=False)
+    # Average
+    average_a = models.SmallIntegerField(null=True)
+    average_b = models.SmallIntegerField(null=True)
+    average_c = models.SmallIntegerField(null=True)
+    average_d = models.SmallIntegerField(null=True)
+    average_e = models.SmallIntegerField(null=True)
+    average_f = models.SmallIntegerField(null=True)
+    # Nb students marks superor or equal to the normal average
+    nb_marksup = models.SmallIntegerField(null=True)
+    nb_marksup_a = models.SmallIntegerField(null=True)
+    nb_marksup_b = models.SmallIntegerField(null=True)
+    nb_marksup_c = models.SmallIntegerField(null=True)
+    nb_marksup_d = models.SmallIntegerField(null=True)
+    nb_marksup_e = models.SmallIntegerField(null=True)
+    nb_marksup_f = models.SmallIntegerField(null=True)
+
     fk_classroom_termsubject = models.ForeignKey('classroom_termsubject',on_delete = models.PROTECT)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -1713,12 +1825,39 @@ class evaluation(models.Model):
         id_order_in_yearsubject = models.SmallIntegerField(default=0) # En général, No dans la matière (1 et 2 pour le premier trimestre/ 2 et 3 pour le deuxième trimestre etc..)
         fk_classroom_termsubject = models.ForeignKey('classroom_termsubject', on_delete=models.PROTECT)
 
+
+    def __str__(self):
+            return self.fk_classroom_termsubject + '_' + self.label
+
+class student_has_termsubjeval (models.Model):
+    # created --> Date de création de l'objet
+    created     = models.DateTimeField(auto_now_add=True)
+    # updated --> Date de mise à jour
+    modified = models.DateTimeField(auto_now=True)
+    # Mod_Version --> version de mise à jour (c'est ce numéro qui sert pour savoir s'il faut ou non mettre à jour)
+    mod_version = models.SmallIntegerField(default=0)
+
+    # Id de l'étudiant
+    ref_idstudent = models.ForeignKey('student',on_delete = models.PROTECT,null=False)
+    # Id de l'évaluation
+    ref_evaluation = models.ForeignKey('evaluation',on_delete = models.PROTECT,null=False)
+    # Id du trimestre (1 à 4 (vacance scolaire))
+    ref_term = models.SmallIntegerField(null=False)
+    # information DE l'élèves pour l'évaluation
+    note = models.FloatField(null=True)
+    crit_a = models.SmallIntegerField(null=True)
+    crit_b = models.SmallIntegerField(null=True)
+    crit_c = models.SmallIntegerField(null=True)
+    crit_d = models.SmallIntegerField(null=True)
+    crit_e = models.SmallIntegerField(null=True)
+    crit_f = models.SmallIntegerField(null=True)
+    observation = models.CharField(max_length=360,null=True)
+
 """
     # Population
     # The table is populate with a script with default value
     # according to the config table
-
-
+    
 1- table_language_ok = models.BooleanField(default=False)
 1- table_academicyear_ok = models.BooleanField(default=False)
 22- table_natureparentutor_ok = models.BooleanField(default=False)
