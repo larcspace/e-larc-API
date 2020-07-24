@@ -29,7 +29,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0970cef-4b05-4ec8-a380-53d016b72a9e" name="Default Changelist" comment="Passage de l'invite de commande à Pycharm --&gt; répertoire .idea">
-      <change beforePath="$PROJECT_DIR$/larcauth/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/larcauth/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/larcauth/migrations/0003_auto_20200724_1525.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/larcauth/migrations/0004_auto_20200724_1728.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/larcauth/migrations/0005_auto_20200724_1758.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/larcauth/migrations/0006_auto_20200724_1803.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/larcauth/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/larcauth/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +118,9 @@
       <workItem from="1595251213458" duration="5180000" />
       <workItem from="1595328174041" duration="8776000" />
       <workItem from="1595434500926" duration="3815000" />
-      <workItem from="1595516338683" duration="974000" />
+      <workItem from="1595516338683" duration="1512000" />
+      <workItem from="1595518231523" duration="931000" />
+      <workItem from="1595603567267" duration="4487000" />
     </task>
     <task id="LOCAL-00001" summary="hangement de la base de donnée : passage de V3.8 à V4.0">
       <created>1595254979919</created>
@@ -183,10 +189,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="349" y="78" key="#larc/0.0.1280.984@0.0.1280.984" timestamp="1595256252964" />
-    <state x="92" y="92" width="1096" height="800" key="DiffContextDialog" timestamp="1595256059657">
+    <state x="92" y="92" width="1096" height="800" key="DiffContextDialog" timestamp="1595518153340">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="92" y="92" width="1096" height="800" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1595256059657" />
+    <state x="92" y="92" width="1096" height="800" key="DiffContextDialog/0.0.1280.984@0.0.1280.984" timestamp="1595518153340" />
     <state x="507" y="246" width="749" height="490" key="EnvironmentVariablesDialog" timestamp="1595252653167">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -247,6 +253,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="141" y="136" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1595250027906" />
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1595518562772">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1595518562772" />
     <state x="246" y="102" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595333094089">
       <screen x="0" y="0" width="1280" height="984" />
     </state>

@@ -1255,7 +1255,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s13_note_d = models.SmallIntegerField(null=True)
     s13_note_e = models.SmallIntegerField(null=True)
     s13_note_f = models.SmallIntegerField(null=True)
-    s13_obsersation = models.CharField(null=True, max_length=720)
+    s13_observation = models.CharField(null=True, max_length=720)
 
     # Composition
     s14_note = models.FloatField(null=True)
@@ -1265,7 +1265,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s14_note_d = models.SmallIntegerField(null=True)
     s14_note_e = models.SmallIntegerField(null=True)
     s14_note_f = models.SmallIntegerField(null=True)
-    s14_obsersation = models.CharField(null=True, max_length=360)
+    s14_observation = models.CharField(null=True, max_length=360)
 
     # Professional judgement
     s15_note = models.FloatField(null=True)
@@ -1275,7 +1275,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     s15_note_d = models.SmallIntegerField(null=True)
     s15_note_e = models.SmallIntegerField(null=True)
     s15_note_f = models.SmallIntegerField(null=True)
-    s15_obsersation = models.CharField(null=True, max_length=1200)
+    s15_observation = models.CharField(null=True, max_length=1200)
 
     cp_note = models.FloatField(null=True)
     cp_note_a = models.SmallIntegerField(null=True)
@@ -1284,7 +1284,7 @@ class learnerDP_has_termsubjectDP(learner_has_termsubject):
     cp_note_d = models.SmallIntegerField(null=True)
     cp_note_e = models.SmallIntegerField(null=True)
     cp_note_f = models.SmallIntegerField(null=True)
-    cp_obsersation = models.CharField(null=True, max_length=360)
+    cp_observation = models.CharField(null=True, max_length=360)
 
     jgt_a = models.SmallIntegerField(null=True)
     jgt_b = models.SmallIntegerField(null=True)
@@ -1357,7 +1357,7 @@ class learnerPei_has_termsubjectPEI(learner_has_termsubject):
     s10_observation = models.CharField(null=True,max_length=360)
     s11_observation = models.CharField(null=True,max_length=360)
     s12_observation = models.CharField(null=True,max_length=360)
-    s13_obsersation = models.CharField(null=True, max_length=360)
+    s13_observation = models.CharField(null=True, max_length=360)
 
     f01_note_a = models.SmallIntegerField(null=True)
     f01_note_b = models.SmallIntegerField(null=True)
@@ -1543,7 +1543,7 @@ class learnerPei_has_termsubjectPEI(learner_has_termsubject):
     s14_note_d = models.SmallIntegerField(null=True)
     s14_note_e = models.SmallIntegerField(null=True)
     s14_note_f = models.SmallIntegerField(null=True)
-    s14_obsersation = models.CharField(null=True, max_length=360)
+    s14_observation = models.CharField(null=True, max_length=360)
 
     # Professional judgement
     s15_note_a = models.SmallIntegerField(null=True)
@@ -1552,7 +1552,7 @@ class learnerPei_has_termsubjectPEI(learner_has_termsubject):
     s15_note_d = models.SmallIntegerField(null=True)
     s15_note_e = models.SmallIntegerField(null=True)
     s15_note_f = models.SmallIntegerField(null=True)
-    s15_obsersation = models.CharField(null=True, max_length=1200)
+    s15_observation = models.CharField(null=True, max_length=3000)
 
     cp_note_a = models.SmallIntegerField(null=True)
     cp_note_b = models.SmallIntegerField(null=True)
