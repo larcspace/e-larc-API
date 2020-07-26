@@ -28,12 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0970cef-4b05-4ec8-a380-53d016b72a9e" name="Default Changelist" comment="Passage de l'invite de commande à Pycharm --&gt; répertoire .idea">
-      <change afterPath="$PROJECT_DIR$/DBPostgresql/LarcV4.0_after_e-larc-API-01_step1b.backup" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/larcauth/migrations/0007_auto_20200726_1639.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larcauth/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/larcauth/models.py" afterDir="false" />
-    </list>
+    <list default="true" id="b0970cef-4b05-4ec8-a380-53d016b72a9e" name="Default Changelist" comment="Passage de l'invite de commande à Pycharm --&gt; répertoire .idea" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +114,7 @@
       <workItem from="1595516338683" duration="1512000" />
       <workItem from="1595518231523" duration="931000" />
       <workItem from="1595603567267" duration="5097000" />
-      <workItem from="1595779456768" duration="2215000" />
+      <workItem from="1595779456768" duration="2962000" />
     </task>
     <task id="LOCAL-00001" summary="hangement de la base de donnée : passage de V3.8 à V4.0">
       <created>1595254979919</created>
