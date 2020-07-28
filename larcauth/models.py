@@ -1731,6 +1731,7 @@ class evaluation(models.Model):
     # this attribute is completed by a check
     active = models.BooleanField (default=False)
     # Average
+    average = models.FloatField(null=True)
     average_a = models.SmallIntegerField(null=True)
     average_b = models.SmallIntegerField(null=True)
     average_c = models.SmallIntegerField(null=True)
@@ -1833,7 +1834,7 @@ class evaluation(models.Model):
 
 class student_has_termsubjeval (models.Model):
     # created --> Date de création de l'objet
-    created     = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True)
     # updated --> Date de mise à jour
     modified = models.DateTimeField(auto_now=True)
     # Mod_Version --> version de mise à jour (c'est ce numéro qui sert pour savoir s'il faut ou non mettre à jour)

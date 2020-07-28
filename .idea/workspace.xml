@@ -28,7 +28,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0970cef-4b05-4ec8-a380-53d016b72a9e" name="Default Changelist" comment="Passage de l'invite de commande à Pycharm --&gt; répertoire .idea" />
+    <list default="true" id="b0970cef-4b05-4ec8-a380-53d016b72a9e" name="Default Changelist" comment="Passage de l'invite de commande à Pycharm --&gt; répertoire .idea">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larcauth/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/larcauth/models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +117,8 @@
       <workItem from="1595516338683" duration="1512000" />
       <workItem from="1595518231523" duration="931000" />
       <workItem from="1595603567267" duration="5097000" />
-      <workItem from="1595779456768" duration="2962000" />
+      <workItem from="1595779456768" duration="4297000" />
+      <workItem from="1595951508877" duration="378000" />
     </task>
     <task id="LOCAL-00001" summary="hangement de la base de donnée : passage de V3.8 à V4.0">
       <created>1595254979919</created>
@@ -247,10 +251,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="141" y="136" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1595250027906" />
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1595622947285">
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2" timestamp="1595786510299">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1595622947284" />
+    <state x="232" y="224" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1595786510299" />
     <state x="246" y="102" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595333094089">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
